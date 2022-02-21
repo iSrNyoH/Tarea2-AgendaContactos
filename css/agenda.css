@@ -1,0 +1,72 @@
+*,::after,*::before{
+    margin: 0;
+    padding: 0;
+
+}
+html{
+    font-family: 'Roboto-Serif' , 'sans-serif';
+    font-size: 62.5%;
+}
+body{
+    background-color:rgba(0, 0, 0, 0.712);
+    color: rgb(160, 159, 159);
+}
+.container{
+    height: 100vh;
+    width: 70vw;
+    margin: 2rem auto;
+}
+.container h2{
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2.3rem;
+}
+
+.formulario{
+    display: block;
+    width: 50%;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario input{
+    margin: 1rem 0rem;
+    line-height: 3rem;
+    background: none;
+    outline: 0;
+    border: 0;
+    color: white;
+}
+.formulario input:active{
+    border-bottom: 1px solid whitesmoke;
+}
+.formulario input:focus{
+    border-bottom: 1px solid whitesmoke;
+}
+.formulario button{
+    margin: 1rem 0rem;
+    background-color: rgb(34, 34, 34);
+    border: 0;
+    outline: 0;
+    height: 3rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: whitesmoke;
+}
+
+.lista-contactos{
+    display: flex;
+    flex-direction: column;
+}
+.contacto{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 3rem;
+}
+.icono{
+    color: tomato;
+    cursor: pointer;
+}

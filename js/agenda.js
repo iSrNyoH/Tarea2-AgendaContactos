@@ -1,17 +1,32 @@
-function almacenar(){
-    function contacto(nombre, apellido, telefono){
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.telefono = telefono;
-    }
-    var AlmacenarNombre = document.getElementById("nombre").value;
-    var AlmacenarApellido = document.getElementById("apellido").value;
-    var AlamacenarTelefono = document.getElementById("telefono").value;
+const button = document.getElementById('button')
+button.addEventListener('click', ()=>{
+    newContact();
+})
 
-    nuevoContacto = new contacto(AlmacenarNombre,AlmacenarApellido,AlamacenarTelefono);
-    console.log(nuevoContacto);
-    agregar();
+newContact = () => {
+    const contact = {
+    nombre: "Michael",
+    apellido: "Hernandez",
+    telefono: "8494454645",
+    };
+
+    fetch("http://www.raydelto.org/agenda.php",{
+    method: "POST",
+    body: JSON.stringify(contact),
+    headers:{
+        "content-type":"application/json"
+    }
+})
+.then(Response => Response.json())
+.then(data => mostrarData(data))
+.catch(error => console.log(error));
+
+console.log(newContact)
+console.log(JSON.stringify(newContact))
+
 }
+
+
 
 function cargarcontactos(){
     fetch("http://www.raydelto.org/agenda.php")
@@ -28,11 +43,4 @@ function cargarcontactos(){
 
         document.getElementById('datos').innerHTML = body
     }
-}
-
-var datos=[];
-
-function agregar(){
-    datos.push(nuevoContacto);
-    console.log(datos);
 }

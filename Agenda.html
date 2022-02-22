@@ -10,35 +10,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/agenda.css">
-    <script src="js/agenda.js"></script>
+    
 </head>
 <body onload="cargarcontactos()">
     <div class="container">
         <h2>Agenda de contactos</h2>
         <div class="formulario">
-            <input type="text" class="nombre" placeholder="nombre">
-            <input type="text" class="apellido" placeholder="apellido">
-            <input type="text" class="telefono" placeholder="telefono">
-            <button class="btn-agregar">Agregar</button>
+            <input type="text" id="nombre" placeholder="nombre">
+            <input type="text" id="apellido" placeholder="apellido">
+            <input type="text" id="telefono" placeholder="telefono">
+            <button class="btn-agregar" onclick="almacenar();">Agregar</button>
 
-            <div class="lista-contactos">
-                <div class="contacto">
-                    <h3>nombre</h3>
-                    <p>apellido</p>
-                    <p>telefono</p>
-                    <span class="material-icons-outlined icono"> Eliminar</span>
-                </div>
-            </div>
-            <div class="lista-contactos">
-                <div class="contacto">
-                    <h3>nombre</h3>
-                    <p>apellido</p>
-                    <p>telefono</p>
-                    <span class="material-icons-outlined icono"> Eliminar</span>
-                </div>
+            <div class="container">
+                <table class="table" id="lista-contactos">
+                    <thead>
+                        <tr>
+                            <th>hombre</th>
+                            <th>apellido</th>
+                            <th>telefono</th>
+                        </tr>
+                    </thead>
+                    <tbody id="datos">
+
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
     <script src="js/formulario.js"></script>
+    <script src="js/agenda.js"></script>
 </body>
 </html>
